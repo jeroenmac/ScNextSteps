@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SC Next Step Updater
 // @namespace    http://tampermonkey.net/
-// @version      7.5
+// @version      7.6
 // @description  Update SC Next Steps in Quip. This to have well structured text field which can be used for analytics.
 // @author       Jeroen M.
 // @match        *://*/*
