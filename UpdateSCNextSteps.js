@@ -6,6 +6,8 @@
 // @author       Jeroen M.
 // @match        *://*/*
 // @grant        none
+// @updateURL    https://raw.githubusercontent.com/jeroenmac/ScNextSteps/main/UpdateSCNextSteps.js
+// @downloadURL  https://raw.githubusercontent.com/jeroenmac/ScNextSteps/main/UpdateSCNextSteps.js
 // ==/UserScript==
 
 (function() {
