@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SC Next Step Updater
 // @namespace    http://tampermonkey.net/
-// @version      7.4
+// @version      7.5
 // @description  Update SC Next Steps in Quip. This to have well structured text field which can be used for analytics.
 // @author       Jeroen M.
 // @match        *://*/*
@@ -214,7 +214,7 @@
                     </select>
 
                     <label>Languages Required:</label>
-                    <div class="language-list" id="languagesRequired">${['English', 'French', 'Walloon', 'German', 'Spanish', 'Catalan', 'Basque', 'Galician', 'Italian', 'Arabic', 'Hebrew', 'Russian', 'Turkish', 'Greek', 'Polish', 'Romanian', 'Dutch', 'Flemish', 'Swedish', 'Norwegian', 'Finnish', 'Danish', 'Portuguese', 'Czech', 'Slovak', 'Hungarian', 'Bulgarian', 'Croatian', 'Serbian', 'Slovenian', 'Albanian', 'Macedonian', 'Bosnian', 'Estonian', 'Latvian', 'Lithuanian', 'Ukrainian', 'Belarusian', 'Georgian', 'Armenian', 'Azerbaijani', 'Kazakh', 'Uzbek', 'Turkmen', 'Kyrgyz', 'Tajik'].map(lang => `<label class="columnsCheck"><input type="checkbox" name="languagesRequired" value="${lang}" ${data.languagesRequired.includes(lang) ? 'checked' : ''}>${lang}</label>`).join('')}</div>
+                    <div class="language-list" id="languagesRequired">${['English', 'French', 'Walloon', 'German', 'Spanish', 'Catalan', 'Basque', 'Galician', 'Italian', 'Arabic', 'Hebrew', 'Russian', 'Turkish', 'Greek', 'Polish', 'Romanian', 'Dutch', 'Flemish', 'Swedish', 'Norwegian', 'Finnish', 'Danish', 'Icelandic', 'Portuguese', 'Czech', 'Slovak', 'Hungarian', 'Bulgarian', 'Croatian', 'Serbian', 'Slovenian', 'Albanian', 'Macedonian', 'Bosnian', 'Estonian', 'Latvian', 'Lithuanian', 'Ukrainian', 'Belarusian', 'Georgian', 'Armenian', 'Azerbaijani', 'Kazakh', 'Uzbek', 'Turkmen', 'Kyrgyz', 'Tajik'].map(lang => `<label class="columnsCheck"><input type="checkbox" name="languagesRequired" value="${lang}" ${data.languagesRequired.includes(lang) ? 'checked' : ''}>${lang}</label>`).join('')}</div>
 
                     <label>Language Support:</label>
                     <div id="languageSupportCSS">
