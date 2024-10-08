@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SC Next Step Updater
 // @namespace    http://tampermonkey.net/
-// @version      7.6
+// @version      7.7
 // @description  Update SC Next Steps in Quip. This to have well structured text field which can be used for analytics.
 // @author       Jeroen M.
 // @match        *://*/*
@@ -189,8 +189,7 @@
                     <label for="presalesStatus">Presales Activity Status:</label>
                     <select class="colorclass" id="presalesStatus" required>
                         <option value="WIP" ${data.presalesStatus === 'WIP' ? 'selected' : ''}>WIP</option>
-                        <option value="Completed" ${data.presalesStatus === 'Completed' ? 'selected' : ''}>Completed</option>
-                        <option value="SC Not Required" ${data.presalesStatus === 'SC Not Required' ? 'selected' : ''}>SC Not Required</option>
+                        <option value="Completed" ${data.presalesStatus === 'Completed' || data.presalesStatus === 'SC Not Required' ? 'selected' : ''}>Completed</option>
                         <option value="SC Not Yet Engaged" ${data.presalesStatus === 'SC Not Yet Engaged' ? 'selected' : ''}>SC Not Yet Engaged</option>
                         <option value="On-Hold" ${data.presalesStatus === 'On-Hold' ? 'selected' : ''}>On-Hold</option>
                     </select>
@@ -211,12 +210,12 @@
 
                     <label for="languageRisk">Language Risk:</label>
                     <select class="colorclass" id="languageRisk" required>
-                        <option value="Yes" ${data.languageRisk === 'Yes' ? 'selected' : ''}>Yes</option>
-                        <option value="No" ${data.languageRisk === 'No' ? 'selected' : ''}>No</option>
+                        <option value="No" ${data.languageRisk === 'No' ? 'selected' : ''}>No</option>    
+                        <option value="Yes" ${data.languageRisk === 'Yes' ? 'selected' : ''}>Yes</option>                
                     </select>
 
                     <label>Languages Required:</label>
-                    <div class="language-list" id="languagesRequired">${['English', 'French', 'Walloon', 'German', 'Spanish', 'Catalan', 'Basque', 'Galician', 'Italian', 'Arabic', 'Hebrew', 'Russian', 'Turkish', 'Greek', 'Polish', 'Romanian', 'Dutch', 'Flemish', 'Swedish', 'Norwegian', 'Finnish', 'Danish', 'Icelandic', 'Portuguese', 'Czech', 'Slovak', 'Hungarian', 'Bulgarian', 'Croatian', 'Serbian', 'Slovenian', 'Albanian', 'Macedonian', 'Bosnian', 'Estonian', 'Latvian', 'Lithuanian', 'Ukrainian', 'Belarusian', 'Georgian', 'Armenian', 'Azerbaijani', 'Kazakh', 'Uzbek', 'Turkmen', 'Kyrgyz', 'Tajik'].map(lang => `<label class="columnsCheck"><input type="checkbox" name="languagesRequired" value="${lang}" ${data.languagesRequired.includes(lang) ? 'checked' : ''}>${lang}</label>`).join('')}</div>
+                    <div class="language-list" id="languagesRequired">${['English', 'French', 'Walloon', 'German', 'Swiss German', 'Spanish', 'Catalan', 'Basque', 'Galician', 'Italian', 'Arabic', 'Hebrew', 'Russian', 'Turkish', 'Greek', 'Polish', 'Romanian', 'Dutch', 'Flemish', 'Swedish', 'Norwegian', 'Finnish', 'Danish', 'Icelandic', 'Portuguese', 'Czech', 'Slovak', 'Hungarian', 'Bulgarian', 'Croatian', 'Serbian', 'Slovenian', 'Albanian', 'Macedonian', 'Bosnian', 'Estonian', 'Latvian', 'Lithuanian', 'Ukrainian', 'Belarusian', 'Georgian', 'Armenian', 'Azerbaijani', 'Kazakh', 'Uzbek', 'Turkmen', 'Kyrgyz', 'Tajik'].map(lang => `<label class="columnsCheck"><input type="checkbox" name="languagesRequired" value="${lang}" ${data.languagesRequired.includes(lang) ? 'checked' : ''}>${lang}</label>`).join('')}</div>
 
                     <label>Language Support:</label>
                     <div id="languageSupportCSS">
